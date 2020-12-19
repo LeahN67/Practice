@@ -66,6 +66,77 @@ c.add('c')
 print(c)
 
 #MAPS/DICTIONARIES/HASH TABLES...
+d={'name': "Jeff", 'Address': "123 Main"} #Dictionary
+print(d)
+print(d['name'])
+
+if 'name' in d:
+    print("Name is defined")
+    if 'Age' in d:
+        print("Age is defined")
+    else:
+        print("Age is undefined")
+
+#access the directory and provide a default value
+d.get('unknown_key', 'default')
+#access the individual keys and values of a dictionary.
+print(f'Keys:{d.keys()}')
+print(f'Values:{d.values()}')
+
+
+# Python list & map structures
+customers= [{"Name":"Jeff & Tracy Heaton","Pets":["Wynton", "Cricket",
+        "Hickory"]},{"Name":"John Smith", "Pets":["Rover"]}, {"Name":"John Doe"}]
+print(f'Our Customers are :{customers}')
+
+for customer in customers:
+    print(f"{customer['Name']}:{customer.get('pets','no pets')}")
+
+#More Advanced Lists
+a=[1,2,3,4,5,6]
+b=[7,8,9,0,1,2]
+print(zip(a,b))
+
+print(list(zip(a,b)))
+
+for x,y in zip(a,b):
+    print(f'{x}-{y}=',(x-y))
+
+a=[1,2,3,6,7,8,5]
+for i,x in enumerate(a):
+    if x>5:
+        a[i]=5
+print(a)
+
+lst=[x*10 for x in range(2,10)]
+print(lst)
+
+text={'Leah','Toto','Mum'}
+lookup={key:value for (value,key) in enumerate(text)}
+print(lookup)
+
+print(f'The column number of Leah is: {lookup["Leah"]}')
+
+#An Introduction to JSON
+import json
+json_string = '{"first":"Jeff","last":"Heaton"}'
+obj = json.loads(json_string)
+print(f"First name: {obj['first']}")
+print(f"Last name: {obj['last']}")
+
+
+python_obj = {"first":"Jeff","last":"Heaton"}
+print(json.dumps(python_obj))
+
+
+
+
+
+
+
+
+
+
 
 
 
